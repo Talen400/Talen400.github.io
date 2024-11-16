@@ -1,126 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <title>Talen x3</title>
-
-    <style>
-        body {
-            background-color: #333333;
-            color: #ffffff;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        
-        body.light-theme {
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        
-        body.dark-theme footer,
-        body.dark-theme span,
-        body.dark-theme h1,
-        body.dark-theme h2,
-        body.dark-theme h3,
-        body.dark-theme h4,
-        body.dark-theme h5,
-        body.dark-theme h6,
-        body.dark-theme p,
-        body.dark-theme a {
-            color: #ffffff !important;
-        }
-
-        
-        body.dark-theme a:hover {
-            color: #ffffff;
-        }
-
-        
-        .theme-toggle-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: transparent;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .light-theme .theme-toggle-btn {
-            color: #333;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talen - Fullstack Developer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+<body>
 
-<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"> Talen </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
-        <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-            <span class="fs-4"> <i class="bi bi-palette"></i> Talen :3 </span>
-        </header>
+    <!-- Header Section -->
+    <header class="header-section d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <h1 class="display-4"> Talen Lavareda </h1>
+            <p class="lead"> Fullstack Developer </p>
+            <p class="skills"> Javascript, Bootstrap, NodeJS, Express, PNPM, Docker, GIT, HTML/CSS, SQL, Python, Django, Env, Jupyter Notebook, Pandas, Geopandas, Numpy, MatplotLib, Seaborn</p>
+        </div>
+    </header>
 
-        <main>
-            <h1 class="text-body-emphasis"> <i class="bi bi-umbrella"></i> About me </h1>
-            <p class="fs-5 col-md-8"> Hello! I'm just starting out in programming and really enjoy math, especially algebra and geometry. My main interest lies in backend development (still learning front-end, as you can see!). I'm also intrigued by various areas within programming, particularly at the low-level. </p>
-
-            <hr class="col-3 col-md-2 mb-5">
-
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <h2 class="text-body-emphasis"> <i class="bi bi-brightness-alt-high"></i> Starter projects</h2>
-                    <p> Some projects x3 <i class="bi bi-heart"></i> :</p>
-                    <ul class="list-unstyled ps-0">
-                        <li>Obits_firearms_geodataframes-Project;</li>
-                        <li>Simple_CRUD;</li>
-                    </ul>
-                </div>
-
-                <div class="col-md-6">
-                    <h2><i class="bi bi-wallet-fill"></i> Stacks: </h2>
-                    <li>Django</li>
-                    <li>Bootstrap</li>
-                    <li>Node.js/Express</li>
-                    <li>Jupyter/numpy/pandas/geopandas</li>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p>
+                        Fullstack Developer at the beginning of my career, passionate about technology and with a solid foundation in personal projects and studies. I have practical skills in JavaScript, Node.js, Express, Bootstrap, Docker, and SQL, along with experience in HTML/CSS and frameworks like Django. I am dedicated and self-taught, always seeking new challenges to expand my knowledge and apply effective solutions.
+                    </p>
                 </div>
             </div>
-        </main>
+        </div>
+    </section>
 
-        <footer class="pt-5 my-5 text-body-secondary border-top">
-            Created in &copy; 2024
-        </footer>
-    </div>
+    <!-- Experience Section -->
+    <section id="experience" class="bg-black py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Experience</h2>
 
-    <button class="theme-toggle-btn" onclick="toggleTheme()">
-        <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
-    </button>
+            <!-- Zurich Santander -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title"> Fullstack Developer</h3>
+                    <p class="card-text"> Self employed full stack developer with experience in remote development, focused on building robust and scalable applications. Strong skills in both backend and frontend development, as well as data analysis and interactive visualization creation. Experienced in collaborative work within agile environments and proficient in code versioning best practices.</p>
+                    <h5>Technologies Used:</h5>
+                    <ul>
+                        <li>Python: Django, virtual environment (env-virtual), Jupyter, (Geo)Pandas, NumPy, Matplotlib, Seaborn</li>
+                        <li>JavaScript: Node.js (Express), PNPM</li>
+                        <li>Containerization: Docker, Docker Compose</li>
+                        <li>Version Control: Git</li>
+                        <li>Web Development: HTML/CSS</li>
+                        <li>Databases: SQL</li>
 
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.getElementById("theme-icon");
+                    </ul>
+                </div>
+            </div>
 
-           
-            body.classList.toggle("dark-theme");
-            body.classList.toggle("light-theme");
+            <!-- AB InBev -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title"> Junior Researcher WP2-CETELI-1-T </h3>
+                    <p class="card-text"> 
+                        Experienced in web development, mechatronics, and mechanical design. I developed and maintained web applications using JavaScript, HTML, CSS, and SQL, and I programed microcontrollers with Arduino. I did 3D modeling with Solid Edge and mechanical assembly, integrating software and hardware for innovative solutions.
+                    </p>
+                    <h5>Technologies Used:</h5>
+                    <ul>
+                        <li>Web Development: JavaScript, HTML, CSS, SQL</li>
+                        <li>Mechatronic Development</li>
+                        <li>Arduino Programming: Arduino IDE</li>
+                        <li>3D Modeling: Solid Edge</li>
+                        <li>Mechanical Construction</li>
+                    </ul>
+                </div>
+            </div>
 
-            
-            if (body.classList.contains("dark-theme")) {
-                icon.classList.replace("bi-sun-fill", "bi-moon-stars-fill");
-            } else {
-                icon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
-            }
-        }
-    </script>
 
+            <!-- Add more experiences if needed -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Projects</h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"> Analysis Obits by firearms in Brazil</h5>
+                            <p class="card-text">This project aims to read, process and plot real data on firearm-related deaths in Brazil.</p>
+                            <a href="https://github.com/Talen400/Obits_firearms_geodataframes-Project" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"> Personal website </h5>
+                            <p class="card-text">
+                                This project is a personal web page that presents information about my profile, experiences and my initial projects. It was developed using HTML, CSS, and Bootstrap.
+                            </p>
+                            <a href="https://github.com/Talen400/Talen400.github.io" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"> CRUD </h5>
+                            <p class="card-text">
+                                his project is a CRUD (Create, Read, Update, Delete) application developed in Node.js. It manages data operations efficiently, showcasing basic backend functionalities. The application was built using Node.js along with Express.js for routing.
+                            </p>
+                            <a href="https://github.com/Talen400/Simple_CRUD" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-black py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Contact</h2>
+            <p>Let's connect!</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://www.linkedin.com/in/talen-lavareda" target="_blank" class="btn btn-outline-project">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://bsky.app/profile/talen.meoow.dev" target="_blank" class="btn btn-outline-project">
+                    <i class="fab fa-bluesky"></i> Bluesky
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-center text-white py-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Talen Lavareda. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
 </body>
-
 </html>
