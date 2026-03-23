@@ -431,7 +431,13 @@ h1 em {
 #projects .projects-body {
   display: grid;
   grid-template-columns: 200px 320px 1fr;
-  min-height: 80vh;
+  /* height: fixed instead of min-height.
+     This is the key change: once the parent has a rigid height,
+     the children (skills-panel and readme-panel) are also constrained
+     to that same height. Since they already have overflow-y: auto,
+     they will now scroll independently when their content exceeds that height.
+     calc(100vh - 56px) = full viewport height minus the fixed nav bar. */
+  height: calc(100vh - 56px);
 }
 
 .proj-sidebar-label {
@@ -571,6 +577,27 @@ h1 em {
 .readme-panel {
   padding: 2.5rem 3rem;
   overflow-y: auto;
+}
+
+/* Custom scrollbar — matches the dark purple theme.
+   Without this, Chrome/Edge show a default gray scrollbar that looks
+   completely out of place on a dark background. */
+.readme-panel::-webkit-scrollbar,
+.skills-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.readme-panel::-webkit-scrollbar-track,
+.skills-panel::-webkit-scrollbar-track {
+  background: transparent; /* invisible track */
+}
+.readme-panel::-webkit-scrollbar-thumb,
+.skills-panel::-webkit-scrollbar-thumb {
+  background: var(--mid-gray);    /* visible thumb */
+  border-radius: 999px;           /* pill shape */
+}
+.readme-panel::-webkit-scrollbar-thumb:hover,
+.skills-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);      /* accent color on hover — nice touch */
 }
 
 /* Empty state shown before any project is selected */
@@ -816,157 +843,4 @@ h1 em {
   border-right: var(--line);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.contact-cta h3 {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
-}
-.contact-cta h3 em {
-  font-style: italic;
-  color: var(--accent);
-}
-.contact-email {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--dark-gray);
-  margin-bottom: 1.5rem;
-}
-
-.contact-links {
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-
-/* ───────────────────────────────────────────────────────────────────
-   10. FOOTER
-─────────────────────────────────────────────────────────────────── */
-footer {
-  padding: 1.75rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-footer span {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--mid-gray);
-  letter-spacing: 0.06em;
-}
-
-
-/* ───────────────────────────────────────────────────────────────────
-   11. ANIMATIONS
-─────────────────────────────────────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-
-/* ───────────────────────────────────────────────────────────────────
-   12. RESPONSIVE
-   Breakpoints:
-     < 1100px → remove the label sidebar from the projects layout
-     <  800px → stack everything into a single column
-─────────────────────────────────────────────────────────────────── */
-@media (max-width: 1100px) {
-  #projects .projects-body {
-    grid-template-columns: 280px 1fr;
-  }
-  .proj-sidebar-label {
-    display: none;
-  }
-}
-
-@media (max-width: 800px) {
-  nav {
-    padding: 0 1.5rem;
-  }
-  .nav-links {
-    gap: 1.5rem;
-  }
-
-  /* Hero stacks into a single column */
-  #hero {
-    grid-template-columns: 1fr;
-  }
-  .hero-left {
-    padding: 7rem 1.5rem 3rem;
-    border-right: none;
-    border-bottom: var(--line);
-  }
-  .hero-right {
-    padding: 2.5rem 1.5rem;
-  }
-
-  /* Hide section numbering on small screens */
-  .section-header {
-    grid-template-columns: 1fr;
-  }
-  .section-num {
-    display: none;
-  }
-  .section-title-text {
-    padding: 1.5rem;
-    font-size: 1.5rem;
-  }
-
-  /* About — single column */
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-  .about-sidebar,
-  .about-main {
-    border-right: none;
-    border-bottom: var(--line);
-  }
-  .about-main  { padding: 2rem 1.5rem; }
-  .about-links { padding: 2rem 1.5rem; }
-
-  /* Projects — single column */
-  #projects .projects-body {
-    grid-template-columns: 1fr;
-  }
-  .skills-panel {
-    border-right: none;
-    border-bottom: var(--line);
-  }
-  .readme-panel {
-    padding: 2rem 1.5rem;
-  }
-
-  /* Contact — single column */
-  .contact-body {
-    grid-template-columns: 1fr;
-  }
-  .contact-left,
-  .contact-cta {
-    border-right: none;
-    border-bottom: var(--line);
-  }
-  .contact-left,
-  .contact-cta,
-  .contact-links {
-    padding: 2rem 1.5rem;
-  }
-
-  /* Footer stacked */
-  footer {
-    flex-direction: column;
-    gap: 0.4rem;
-    padding: 1.5rem;
-    text-align: center;
-  }
-}
+  justify-co
