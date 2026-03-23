@@ -1,199 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talen - Fullstack Developer</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talen Lavareda — Developer @ 42</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- marked.js — converts Markdown to HTML for README rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#"> Talen </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <!-- ══════════════════════════════ NAV -->
+  <nav>
+    <span class="nav-logo">~/Talen Lavareda</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════ HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-tag">Student @ École 42 — São Paulo</p>
+      <h1>Hi,<br />I'm<br /><em>Talen</em></h1>
+      <p class="hero-desc">
+        Developer in training at 42. Passionate about systems programming,
+        low-level code, and understanding what really happens under the hood.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-dark">
+          View projects
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://github.com/Talen400" target="_blank" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">42</div>
+          <div class="stat-label">School</div>
         </div>
-    </nav>
-
-    <!-- Header Section -->
-    <header class="header-section d-flex align-items-center justify-content-center text-center">
-        <div class="container">
-            <h1 class="display-4"> Talen Lavareda </h1>
-            <p class="lead"> Fullstack Developer </p>
-            <p class="skills"> Javascript, Bootstrap, NodeJS, Express, PNPM, Docker, GIT, HTML/CSS, SQL, Python, Django, Env, Jupyter Notebook, Pandas, Geopandas, Numpy, MatplotLib, Seaborn</p>
-            
-        <section id="contact" class="bg-black py-6">
-            <div class="container text-center">
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="https://github.com/Talen400" target="_blank" class="btn btn-outline-project">
-                        <i class="fab fa-linkedin"></i>GitHub</a>
-                </div>
-            </div>
-        </section>
+        <div class="stat-item">
+          <!-- filled by JS based on the SKILLS array -->
+          <div class="stat-number" id="heroProjectCount">—</div>
+          <div class="stat-label">Projects</div>
         </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">About Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <p>
-                        Fullstack Developer at the beginning of my career, passionate about technology and with a solid foundation in personal projects and studies. I have practical skills in JavaScript, Node.js, Express, Bootstrap, Docker, and SQL, along with experience in HTML/CSS and frameworks like Django. I am dedicated and self-taught, always seeking new challenges to expand my knowledge and apply effective solutions.
-                    </p>
-                </div>
-            </div>
+        <div class="stat-item">
+          <div class="stat-number">C</div>
+          <div class="stat-label">Main language</div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="bg-black py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Experience</h2>
-
-            <!-- Zurich Santander -->
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title"> Fullstack Developer</h3>
-                    <p class="card-text"> Self employed full stack developer with experience in remote development, focused on building robust and scalable applications. Strong skills in both backend and frontend development, as well as data analysis and interactive visualization creation. Experienced in collaborative work within agile environments and proficient in code versioning best practices.</p>
-                    <h5>Technologies Used:</h5>
-                    <ul>
-                        <li>Python: Django, virtual environment (env-virtual), Jupyter, (Geo)Pandas, NumPy, Matplotlib, Seaborn</li>
-                        <li>JavaScript: Node.js (Express), PNPM</li>
-                        <li>Containerization: Docker, Docker Compose</li>
-                        <li>Version Control: Git</li>
-                        <li>Web Development: HTML/CSS</li>
-                        <li>Databases: SQL</li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <!-- AB InBev -->
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title"> Junior Researcher WP2-CETELI-1-T </h3>
-                    <p class="card-text"> 
-                        Experienced in web development, mechatronics, and mechanical design. I developed and maintained web applications using JavaScript, HTML, CSS, and SQL, and I programed microcontrollers with Arduino. I did 3D modeling with Solid Edge and mechanical assembly, integrating software and hardware for innovative solutions.
-                    </p>
-                    <h5>Technologies Used:</h5>
-                    <ul>
-                        <li>Web Development: JavaScript, HTML, CSS, SQL</li>
-                        <li>Mechatronic Development</li>
-                        <li>Arduino Programming: Arduino IDE</li>
-                        <li>3D Modeling: Solid Edge</li>
-                        <li>Mechanical Construction</li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <!-- Add more experiences if needed -->
+        <div class="stat-item">
+          <!-- filled by JS -->
+          <div class="stat-number" id="heroSkillCount">—</div>
+          <div class="stat-label">Skill areas</div>
         </div>
-    </section>
+      </div>
+      <div class="hero-quote">
+        <blockquote>"Learn by doing — the only way to learn to program is to write programs."</blockquote>
+        <cite>— Dennis Ritchie</cite>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Projects</h2>
-            <div class="row g-4">
-                <!-- Project 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title"> Analysis Obits by firearms in Brazil</h5>
-                            <p class="card-text">This project aims to read, process and plot real data on firearm-related deaths in Brazil.</p>
-                            <a href="https://github.com/Talen400/Obits_firearms_geodataframes-Project" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
+  <!-- ══════════════════════════════ ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-num">01 / ABOUT</div>
+      <div class="section-title-text">About me</div>
+    </div>
+    <div class="about-grid">
+      <div class="about-sidebar">
+        <div class="profile-avatar">YN</div>
+        <p class="name">Talen Lavareda</p>
+        <p class="role">Developer @ 42 SP</p>
+      </div>
 
-                <!-- Project 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title"> Personal website </h5>
-                            <p class="card-text">
-                                This project is a personal web page that presents information about my profile, experiences and my initial projects. It was developed using HTML, CSS, and Bootstrap.
-                            </p>
-                            <a href="https://github.com/Talen400/Talen400.github.io" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="about-main">
+        <p>
+          I'm a student at École 42 São Paulo — a tuition-free, teacher-free
+          coding school where you learn by solving real problems and collaborating
+          with peers. No lectures, no deadlines handed from above, just code.
+        </p>
+        <p>
+          My focus is on systems development, with hands-on experience in C/C++,
+          algorithms, and computer science fundamentals. I enjoy understanding
+          what happens at the level of processes, memory, and system calls.
+        </p>
+        <p>
+          Outside of code, [your interest here]. I believe diverse perspectives
+          make software better.
+        </p>
+      </div>
 
-                <!-- Project 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title"> CRUD </h5>
-                            <p class="card-text">
-                                his project is a CRUD (Create, Read, Update, Delete) application developed in Node.js. It manages data operations efficiently, showcasing basic backend functionalities. The application was built using Node.js along with Express.js for routing.
-                            </p>
-                            <a href="https://github.com/Talen400/Simple_CRUD" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="about-links">
+        <a href="https://github.com/Talen400" target="_blank" class="link-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+          </svg>
+          GitHub — Talen400
+        </a> 
+        <a href="https://www.linkedin.com/in/talen-lavareda" target="_blank" class="link-row">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
 
-                <!-- Project 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title"> API_queueHospital </h5>
-                            <p class="card-text">
-                                A backend application to manage a queue of patients. Displaying the list in order of priority by urgency and the next patient
-                            </p>
-                            <a href="https://github.com/Talen400/API_QueueHospital" target="_blank" class="btn btn-project mt-auto">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
+  <!-- ══════════════════════════════ SKILLS & PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <div class="section-num">02 / SKILLS</div>
+      <div class="section-title-text">Skills & Projects</div>
+    </div>
+    <div class="projects-body">
+      <!-- Column 1: explanatory sidebar label -->
+      <div class="proj-sidebar-label">
+        <p>Each skill groups the projects that developed it. Click a project to read its README straight from GitHub.</p>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-black py-5">
-        <div class="container text-center">
-            <h2 class="section-title">Contact</h2>
-            <p>Let's connect!</p>
-            <div class="d-flex justify-content-center gap-3">
-                
-            </div>
+      <!-- Column 2: skills accordion (generated by JS) -->
+      <div class="skills-panel" id="skillsPanel"></div>
+
+      <!-- Column 3: README viewer (filled by JS on click) -->
+      <div class="readme-panel" id="readmePanel">
+        <div class="readme-empty">
+          <div class="empty-icon">◎</div>
+          <p>Select a project on the left to read its README.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-center text-white py-3">
-        <div class="container">
-            <p class="mb-0">&copy; 2024 Talen Lavareda. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- ══════════════════════════════ CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-num">03 / CONTACT</div>
+      <div class="section-title-text">Contact</div>
+    </div>
+    <div class="contact-body">
+      <div class="contact-left">
+        <p>Open to internships, freelance projects, and conversations about technology.</p>
+      </div>
+      <div class="contact-cta">
+        <h3>Let's<br /><em>talk?</em></h3>
+        <p class="contact-email">talen400personal@email.com</p>
+        <a href="mailto:your@email.com" class="btn btn-dark">Send a message</a>
+      </div>
+      <div class="contact-links">
+        <a href="https://github.com/Talen400" target="_blank" class="link-row">GitHub</a>
+        <a href="https://www.linkedin.com/in/talen-lavareda" target="_blank" class="link-row">LinkedIn</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS (with Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
+  <!-- ══════════════════════════════ FOOTER -->
+  <footer>
+    <span>© 2025 Talen Lavareda</span>
+    <span>HTML · CSS · JS — Hosted on GitHub Pages</span>
+  </footer>
+
+  <!-- JS loaded last so the DOM is fully available when the script runs -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>
