@@ -57,6 +57,7 @@ const SKILLS = [
     projects: [
       { name: "42_minishell",    techs: ["C", "Processes", "Pipes"], branch: "main" },
       { name: "42_philosophers", techs: ["C", "Threads", "Mutexes"], branch: "main" },
+	  { name: "42_pipex",	techs: ["C", "Process", "Pipes"], branch: "main"},
     ]
   },
   {
