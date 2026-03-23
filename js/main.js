@@ -71,8 +71,8 @@ const SKILLS = [
     name: "Computer Graphics",
     icon: "🧱",
     projects: [
-      { name: "42_miniRT", techs: ["C++", "Raytracer"],      branch: "main" },
-      { name: "42_fdf", techs: ["C++", "2.5D map game"], branch: "main" },
+      { name: "42_miniRT", techs: ["C", "Raytracer"],      branch: "main" },
+      { name: "42_fdf", techs: ["C", "2.5D map game"], branch: "main" },
     ]
   },
 ];
