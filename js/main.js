@@ -60,14 +60,6 @@ const SKILLS = [
     ]
   },
   {
-    name: "Networking & Protocols",
-    icon: "🌐",
-    projects: [
-      { name: "42_irc",  techs: ["C++", "Sockets", "IRC"], branch: "main" },
-      { name: "42_webserv", techs: ["C++", "HTTP"],            branch: "main" },
-    ]
-  },
-  {
     name: "C++ & OOP",
     icon: "🧱",
     projects: [
