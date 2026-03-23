@@ -131,12 +131,12 @@ a {
 .btn-ghost {
   background: transparent;
   color: var(--dark-gray);
-  border-color: #ccc;
+  border-color: var(--mid-gray); /* was hardcoded #ccc — too light on dark bg */
 }
 .btn-ghost:hover {
-  background: var(--black);
+  background: var(--surface);
   color: var(--white);
-  border-color: var(--black);
+  border-color: var(--white);
   transform: translateY(-1px);
 }
 
@@ -153,8 +153,8 @@ a {
   transition: all 0.22s var(--ease);
 }
 .link-row:hover {
-  border-color: var(--black);
-  color: var(--black);
+  border-color: var(--white);
+  color: var(--white); /* dark theme: stay bright on hover */
   transform: translateX(4px);
 }
 
@@ -228,7 +228,7 @@ nav {
   transition: color 0.25s;
 }
 .nav-links a:hover {
-  color: var(--black);
+  color: var(--white); /* dark theme: --white is prominent text */
 }
 
 
@@ -486,7 +486,7 @@ h1 em {
 .skill-name {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--black);
+  color: var(--white); /* dark theme: --white is the bright foreground */
 }
 .skill-count {
   font-size: 0.65rem;
@@ -548,7 +548,7 @@ h1 em {
 .proj-card-name {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--black);
+  color: var(--white); /* dark theme: --white is the bright foreground */
 }
 .proj-card-tech {
   font-size: 0.65rem;
