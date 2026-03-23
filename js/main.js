@@ -38,7 +38,7 @@ const SKILLS = [
     name: "C Fundamentals",
     icon: "⚙️",
     projects: [
-      { name: "libft",         techs: ["C", "Makefile"],           branch: "main" },
+      { name: "42_libft_ultimate",         techs: ["C", "Makefile"],           branch: "main" },
       { name: "42_printf",     techs: ["C", "Variadic functions"], branch: "main" },
       { name: "42_gnl", techs: ["C", "File descriptors"],   branch: "main" },
     ]
