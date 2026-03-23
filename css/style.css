@@ -48,9 +48,14 @@
   /* Page background — deep, rich purple */
   --black:       #0B0714;                   /* very dark purple — the base of everything */
 
+  /* Surface — slightly lighter purple for code blocks, card backgrounds, hover states.
+     In the light theme --off-white played this role (a light bg surface).
+     Here we need a *dark* surface that's clearly distinct from the text. */
+  --surface:     #1A1030;
+
   /* Accent */
   --accent:      #A87EFF;                   /* vivid violet for highlights and name */
-  --accent-soft: rgba(168, 126, 255, 0.15); /* tinted background for tags/hovers */
+  --accent-soft: rgba(168, 126, 255, 0.18); /* tinted background for tags/hovers */
 
   /* Utilities */
   --line:        1px solid var(--light-gray);
@@ -460,7 +465,7 @@ h1 em {
   user-select: none;
 }
 .skill-header:hover {
-  background: var(--off-white);
+  background: var(--surface);
 }
 
 .skill-icon {
@@ -535,7 +540,7 @@ h1 em {
   transition: background 0.2s;
 }
 
-.proj-card:hover              { background: var(--off-white); }
+.proj-card:hover              { background: var(--surface); }
 .proj-card:hover::before,
 .proj-card.active::before     { background: var(--accent); }
 .proj-card.active             { background: var(--accent-soft); }
@@ -702,7 +707,7 @@ h1 em {
 .readme-content code {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  background: var(--off-white);
+  background: var(--surface);
   border: var(--line);
   padding: 0.15rem 0.4rem;
   border-radius: 2px;
@@ -762,7 +767,7 @@ h1 em {
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--off-white);
+  background: var(--surface);
   border-bottom: 2px solid var(--light-gray);
 }
 .readme-content td {
@@ -776,7 +781,7 @@ h1 em {
   padding: 1.5rem;
   border: var(--line);
   border-radius: var(--radius);
-  background: var(--off-white);
+  background: var(--surface);
   text-align: center;
 }
 .readme-not-found p {
