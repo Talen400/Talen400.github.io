@@ -74,7 +74,7 @@ const SKILLS = [
       { name: "42_cpp00", techs: ["C++", "Classes"],      branch: "main" },
       { name: "42_cpp01", techs: ["C++", "Memory Management"], branch: "main" },
     ]
-  }, 
+  },
   {
     name: "Computer Graphics",
     icon: "🧱",
@@ -247,9 +247,55 @@ function renderReadmeShell(proj) {
 
 
 /* ───────────────────────────────────────────────────────────────────
+   resolveImageUrl
+   Converts any image URL found in a README into a URL the browser
+   can actually load. There are three cases:
+
+   1. Already absolute (https://...)
+      → pass through unchanged.
+      e.g. "https://i.imgur.com/abc.png" stays as-is.
+
+   2. GitHub "blob" URL — the pretty viewer page you get when you
+      click an image file on github.com. Browsers can't use the
+      blob page as an image src, so we swap it for the raw CDN URL.
+      e.g. "https://github.com/user/repo/blob/main/assets/img.png"
+        →  "https://raw.githubusercontent.com/user/repo/main/assets/img.png"
+
+   3. Relative path — the most common case when a README references
+      images stored in the same repository.
+      e.g. "assets/chess.png"
+        →  "https://raw.githubusercontent.com/Talen400/42_fdf/main/assets/chess.png"
+      We build the full URL using GITHUB_USER, the repo name, and
+      the branch — information we already have from the SKILLS array.
+─────────────────────────────────────────────────────────────────── */
+function resolveImageUrl(src, proj) {
+  // Case 1 & 2: already absolute
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    // Case 2: swap GitHub blob viewer URL for the raw CDN URL
+    return src.replace(
+      /https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\//,
+      "https://raw.githubusercontent.com/$1/$2/"
+    );
+  }
+
+  // Case 3: relative path → build absolute raw.githubusercontent.com URL.
+  // Strip any leading "./" so "./assets/img.png" becomes "assets/img.png".
+  const cleanSrc = src.replace(/^\.\//, "");
+  return `https://raw.githubusercontent.com/${GITHUB_USER}/${proj.name}/${proj.branch}/${cleanSrc}`;
+}
+
+
+/* ───────────────────────────────────────────────────────────────────
    renderReadmeContent
    Replaces the spinner with the rendered README content,
    or with an error message if the fetch failed.
+
+   The key addition here is a custom marked.js Renderer.
+   marked.js lets you override how it converts specific Markdown
+   tokens into HTML. By overriding the `image` method we intercept
+   every ![alt](src) in the README and run resolveImageUrl on the
+   src before the <img> tag is written — so images always point to
+   the correct absolute GitHub CDN URL instead of breaking.
 ─────────────────────────────────────────────────────────────────── */
 function renderReadmeContent(text, proj, ghUrl) {
   const panel  = document.getElementById("readmePanel");
@@ -277,8 +323,19 @@ function renderReadmeContent(text, proj, ghUrl) {
     return;
   }
 
-  // Parse the Markdown to HTML using the marked.js library
-  marked.setOptions({ breaks: true, gfm: true });
+  // Build a custom renderer that fixes image URLs before they are
+  // written into the final HTML. Every other token falls through to
+  // marked's default handling — we only override images.
+  const renderer = new marked.Renderer();
+  renderer.image = (href, title, alt) => {
+    const resolvedSrc = resolveImageUrl(href, proj);
+    const titleAttr   = title ? ` title="${title}"` : "";
+    // loading="lazy" skips loading images below the fold until the
+    // user scrolls to them — makes initial render noticeably faster.
+    return `<img src="${resolvedSrc}" alt="${alt}"${titleAttr} loading="lazy" />`;
+  };
+
+  marked.setOptions({ breaks: true, gfm: true, renderer });
   const html = marked.parse(text);
 
   headEl.insertAdjacentHTML("afterend", `
