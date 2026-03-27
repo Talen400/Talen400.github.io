@@ -292,6 +292,19 @@ h1 em {
   line-height: 1.8;
 }
 
+.hero-desc a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.hero-desc a:hover {
+  opacity: 0.75;
+}
+
 .hero-cta {
   margin-top: 3rem;
   display: flex;
