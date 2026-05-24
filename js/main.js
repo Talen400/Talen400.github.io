@@ -87,6 +87,17 @@ const SKILLS = [
       { name: "42_inception", techs: ["docker", "makefile", "ngnix"],      branch: "main" },
     ]
   },
+  {
+  name: "Advanced Backend / Personal",
+  icon: "🚀",
+  projects: [
+    {
+      name: "VaultLink",
+      techs: ["Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Docker", "JWT", "Hybrid Persistence", "REST API"],
+      branch: "main"
+    }
+  ]
+}
 ];
 /* ════════════════════════════════════════════════════════ END OF CONFIG */
 
