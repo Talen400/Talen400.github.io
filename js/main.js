@@ -49,6 +49,11 @@ const SKILLS = [
     projects: [
       { name: "42_push_swap", techs: ["C", "Algorithms", "Stacks"], branch: "main" },
       { name: "libft",     techs: ["C", "Makefile"],             branch: "main" },
+	  {
+        name: "Ring Buffer C",
+        techs: ["C", "Data Structures", "FIFO", "Circular Buffer", "O(1) Optimization"],
+        branch: "main"
+      },
     ]
   },
   {
@@ -58,6 +63,11 @@ const SKILLS = [
       { name: "42_minishell",    techs: ["C", "Processes", "Pipes"], branch: "main" },
       { name: "42_philosophers", techs: ["C", "Threads", "Mutexes"], branch: "main" },
 	  { name: "42_pipex",	techs: ["C", "Process", "Pipes"], branch: "main"},
+	  { 
+        name: "MiniDaemon", 
+        techs: ["C", "System Programming", "Unix Daemons", "Process Management", "Double-Fork"], 
+        branch: "main" 
+      },
     ]
   },
   {
