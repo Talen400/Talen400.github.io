@@ -80,6 +80,13 @@ const SKILLS = [
       { name: "42_fdf", techs: ["C", "2.5D map game"], branch: "main" },
     ]
   },
+  {
+    name: "DevOps / SysAdmin",
+    icon: "🧱",
+    projects: [
+      { name: "42_inception", techs: ["docker", "makefile", "ngnix"],      branch: "main" },
+    ]
+  },
 ];
 /* ════════════════════════════════════════════════════════ END OF CONFIG */
 
