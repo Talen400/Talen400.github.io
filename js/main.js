@@ -66,6 +66,10 @@ const SKILLS = [
     projects: [
       { name: "42_cpp00", techs: ["C++", "Classes"],      branch: "main" },
       { name: "42_cpp01", techs: ["C++", "Memory Management"], branch: "main" },
+      { name: "42_cpp02", techs: ["C++", "Polimorfism ad-hoc"], branch: "main" },
+      { name: "42_cpp03", techs: ["C++", "Inheritance"], branch: "main" },
+      { name: "42_cpp04", techs: ["C++", "Interfaces"], branch: "main" },
+      { name: "42_cpp05", techs: ["C++", "Exceptions"], branch: "main" },
     ]
   },
   {
